@@ -43,7 +43,7 @@ server.pack.register pluginConf, (err) ->
 fnCallback = (err,result) ->
   # Do some stuff when done.
 
-plugin = server.pack.plugins['hapi-mandrill']
+plugin = server.plugins['hapi-mandrill']
 
 plugin.send("Angelina Jolie","angelina@jolie.com", {some: "payload"},"Hello Angelina","angelina-template", fnCallback)
 
@@ -59,7 +59,7 @@ key is not found it will be passed verbatim.
 
 ## Exposed Properties
 ```Coffeescript
-plugin = server.pack.plugins['hapi-mandrill']
+plugin = server.plugins['hapi-mandrill']
 
 plugin.mandrillClient # Note this is null if you do not pass a key in options
 plugin.send(...)
