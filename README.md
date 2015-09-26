@@ -37,7 +37,7 @@ server.pack.register pluginConf, (err) ->
 
 ```
 
-## Send Mail
+## Send Mail Using Template
 ```Coffeescript
 
 fnCallback = (err,result) ->
@@ -46,7 +46,32 @@ fnCallback = (err,result) ->
 plugin = server.plugins['hapi-mandrill']
 
 plugin.send("Angelina Jolie","angelina@jolie.com", {some: "payload"},"Hello Angelina","angelina-template", fnCallback)
+```
 
+## Send Mail without Template
+```
+fnCallback = (err,result) ->
+  # Do some stuff when done.
+ 
+var	plugin = server.plugins['hapi-mandrill'],
+	message = {                                       
+		from_email: "from@domain.tld",
+		from_name: "Person From",
+		to: [
+			{
+				email: "to@domain.tld",
+				name: "Person To",
+				type: "to"
+			}
+		],
+		subject: "Email Subject",
+		text: "Email Text",
+		html: "<p>Email HTML</p>"
+	};
+
+
+// See https://mandrillapp.com/api/docs/messages.JSON.html#method=send for full Message API definition
+plugin.sendNoTemplate( message , fnCallback )
 ```
 
 ## Logging
@@ -64,7 +89,6 @@ plugin = server.plugins['hapi-mandrill']
 plugin.mandrillClient # Note this is null if you do not pass a key in options
 plugin.send(...)
 plugin.templateNameMapping = {...}
-
 ```
 
 ## See also
