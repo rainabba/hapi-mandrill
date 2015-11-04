@@ -1,7 +1,7 @@
 {
   "name": "hapi-mandrill",
   "description": "HAPI plugin that exposes mandrill api - used to send transactional emails.",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "private": false,
   "main": "lib/index.js",
   "repository": {
@@ -9,7 +9,7 @@
     "url": "https://github.com/codedoctor/hapi-mandrill.git"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": ">=0.10.x"
   },
   "scripts": {
     "test": "node_modules/.bin/grunt testandcoverage"
