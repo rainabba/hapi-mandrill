@@ -9,7 +9,7 @@
     "url": "https://github.com/codedoctor/hapi-mandrill.git"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": ">=0.10.x"
   },
   "scripts": {
     "test": "node_modules/.bin/grunt testandcoverage"
